@@ -1,0 +1,110 @@
+{% import "_includes/forms" as forms %}
+
+{{ forms.autosuggestField({
+    label: "Connection String"|t('azure-blob'),
+    id: 'connectionString',
+    name: 'connectionString',
+    suggestEnvVars: true,
+    value: volume.connectionString,
+    errors: volume.getErrors('connectionString'),
+    class: 'azure-connection-string',
+    instructions: 'You can find your connection string by opening your storage account on Azure portal and navigating to Access Keys'|t('azure-blob')
+}) }}
+
+{% set containerInput %}
+    <div class="flex fullwidth">
+        {{ forms.select({
+            name: 'containerSelectionMode',
+            options: [
+                { label: 'Choose…'|t('azure-blob'), value: 'choose' },
+                { label: 'Manual…'|t('azure-blob'), value: 'manual' }
+            ],
+            value: volume.containerSelectionMode,
+            toggle: true,
+            targetPrefix: '.csm-'
+        }) }}
+
+        <div class="csm-choose{% if volume.containerSelectionMode == 'manual' %} hidden{% endif %}">
+            {{ forms.select({
+                id: 'container',
+                name: 'container',
+                options: { (volume.container): volume.container },
+                value: volume.containerSelectionMode == 'manual' ? volume.container,
+                readonly: true,
+                class: 'azure-container-select'
+            }) }}
+        </div>
+        <div class="csm-choose{% if volume.containerSelectionMode == 'manual' %} hidden{% endif %}">
+            <div class="btn azure-refresh-containers">{{ "Refresh"|t('azure-blob') }}</div>
+        </div>
+        <div class="csm-choose{% if volume.containerSelectionMode == 'manual' %} hidden{% endif %}">
+            <div class="spinner hidden"></div>
+        </div>
+
+        <div class="csm-manual{% if volume.containerSelectionMode == 'choose' %} hidden{% endif %} flex-grow">
+            {{ forms.autosuggest({
+                label: "container"|t('azure-blob'),
+                class: 'ltr azure-manualContainer',
+                name: 'manualContainer',
+                suggestEnvVars: true,
+                value: volume.container,
+                placeholder: 'container'|t('azure-blob')
+            }) }}
+        </div>
+    </div>
+{% endset %}
+
+
+{{ forms.field({
+    label: "Container"|t('azure-blob'),
+    id: 'container',
+    required: true,
+    errors: volume.getErrors('container'),
+}, containerInput) }}
+
+{{ forms.autosuggestField({
+    label: "Subfolder"|t('azure-blob'),
+    instructions: "If you want to use a container’s subfolder as a Volume, specify the path to use here."|t('azure-blob'),
+    id: 'subfolder',
+    class: 'ltr',
+    name: 'subfolder',
+    suggestEnvVars: true,
+    value: volume.subfolder,
+    errors: volume.getErrors('subfolder'),
+    placeholder: "path/to/subfolder"|t('azure-blob')
+}) }}
+
+<hr />
+{% set cacheInput %}
+    {% set expires = (volume.expires|length > 0 ? volume.expires|split(' ') : ['', ''])%}
+
+    <div class="flex">
+        <div>
+            {{ forms.text({
+                id: 'expiresAmount',
+                value: expires[0],
+                size: 2,
+                class: 'azure-expires-amount'
+            }) }}
+        </div>
+        {{ forms.select({
+            id: 'expiresPeriod',
+            options: periods,
+            value: expires[1],
+            class: 'azure-expires-period'
+        }) }}
+    </div>
+    {{ forms.hidden({
+        name: "expires",
+        value: volume.expires,
+        class: "expires-combined"
+    }) }}
+{% endset %}
+
+{{ forms.field({
+    label: "Cache Duration"|t,
+    instructions: "The Cache-Control duration that assets should be uploaded to the cloud with.",
+    id: 'cacheDuration',
+}, cacheInput) }}
+
+{% do view.registerAssetBundle("craft\\azureblob\\AzureBlobBundle") %}

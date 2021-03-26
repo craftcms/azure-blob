@@ -1,0 +1,41 @@
+{
+  "name": "craftcms/azure-blob",
+  "description": "Azure Blob Storage integration for Craft CMS",
+  "version": "1.0.0-alpha.1",
+  "type": "craft-plugin",
+  "keywords": [
+    "azure",
+    "cms",
+    "craftcms",
+    "flysystem",
+    "yii2"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pixel & Tonic",
+      "homepage": "https://pixelandtonic.com/"
+    }
+  ],
+  "support": {
+    "email": "support@craftcms.com",
+    "issues": "https://github.com/craftcms/azure-blob/issues?state=open",
+    "source": "https://github.com/craftcms/azure-blob",
+    "docs": "https://github.com/craftcms/azure-blob/blob/master/README.md",
+    "rss": "https://github.com/craftcms/azure-blob/commits/master.atom"
+  },
+  "require": {
+    "craftcms/cms": "^3.6.0",
+    "league/flysystem-azure-blob-storage": "^1.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "craft\\azureblob\\": "src/"
+    }
+  },
+  "extra": {
+    "name": "Azure Blob Storage",
+    "handle": "azure-blob",
+    "documentationUrl": "https://github.com/craftcms/azure-blob/blob/master/README.md"
+  }
+}
