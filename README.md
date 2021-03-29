@@ -1,4 +1,4 @@
-<p align="center"><img src="./src/icon.svg" width="100" height="100" alt="Amazon S3 for Craft CMS icon"></p>
+<p align="center"><img src="./src/icon.svg" width="100" height="100" alt="Azure Blog Storage for Craft CMS icon"></p>
 
 <h1 align="center">Azure Blob Storage for Craft CMS</h1>
 
@@ -25,7 +25,7 @@ Open your terminal and run the following commands:
 cd /path/to/my-project.test
 
 # tell Composer to load the plugin
-composer require craftcms/craftcms/azure-blob
+composer require craftcms/azure-blob
 
 # tell Craft to install the plugin
 ./craft install/plugin craftcms/azure-blob
@@ -33,6 +33,6 @@ composer require craftcms/craftcms/azure-blob
 
 ## Setup
 
-To create a new asset volume for your Amazon S3 bucket, go to Settings → Assets, create a new volume, and set the Volume Type setting to “Azure Blob Storage”.
+To create a new asset volume for your Azure container, go to **Settings** → **Assets**, create a new volume, and set the Volume Type setting to “Azure Blob Storage”.
 
 > **Tip:** The Connection String, Base URL, Container, and Subfolder settings can be set to environment variables. See [Environmental Configuration](https://docs.craftcms.com/v3/config/environments.html) in the Craft docs to learn more about that.

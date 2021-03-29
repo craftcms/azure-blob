@@ -7,7 +7,6 @@ use craft\events\RegisterComponentTypesEvent;
 use craft\services\Volumes;
 use yii\base\Event;
 
-
 /**
  * Plugin represents the Azure Blob Storage plugin.
  *
@@ -16,17 +15,10 @@ use yii\base\Event;
  */
 class Plugin extends BasePlugin
 {
-    // Properties
-    // =========================================================================
-
     /**
      * @inheritdoc
      */
     public $schemaVersion = '1.0';
-
-
-    // Public Methods
-    // =========================================================================
 
     /**
      * @inheritdoc

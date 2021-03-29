@@ -28,9 +28,6 @@ use MicrosoftAzure\Storage\Blob\BlobRestProxy;
  */
 class Volume extends FlysystemVolume
 {
-    // Static
-    // =========================================================================
-
     /**
      * @inheritdoc
      */
@@ -38,9 +35,6 @@ class Volume extends FlysystemVolume
     {
         return 'Azure Blob Storage';
     }
-
-    // Properties
-    // =========================================================================
 
     /**
      * @var bool Whether this is a local source or not. Defaults to false.
@@ -71,9 +65,6 @@ class Volume extends FlysystemVolume
      * @var string Cache expiration period.
      */
     public string $expires = '';
-
-    // Public Methods
-    // =========================================================================
 
     /**
      * @inheritdoc
@@ -157,11 +148,8 @@ class Volume extends FlysystemVolume
      */
     public function getRootUrl()
     {
-        return  parent::getRootUrl() . $this->_subfolder();
+        return parent::getRootUrl() . $this->_subfolder();
     }
-
-    // Protected Methods
-    // =========================================================================
 
     /**
      * @inheritdoc
@@ -201,9 +189,6 @@ class Volume extends FlysystemVolume
         return parent::addFileMetadataToConfig($config);
     }
 
-    // Private Methods
-    // =========================================================================
-
     /**
      * Returns the parsed subfolder path
      *
@@ -214,6 +199,7 @@ class Volume extends FlysystemVolume
         if ($this->subfolder && ($subfolder = rtrim(Craft::parseEnv($this->subfolder), '/')) !== '') {
             return $subfolder . '/';
         }
+
         return '';
     }
 }

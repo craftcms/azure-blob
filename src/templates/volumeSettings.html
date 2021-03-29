@@ -8,7 +8,7 @@
     value: volume.connectionString,
     errors: volume.getErrors('connectionString'),
     class: 'azure-connection-string',
-    instructions: 'You can find your connection string by opening your storage account on Azure portal and navigating to Access Keys'|t('azure-blob')
+    instructions: 'You can find your connection string in the Azure portal under your storage account’s “Access keys” setting.'|t('azure-blob')
 }) }}
 
 {% set containerInput %}
@@ -64,7 +64,7 @@
 
 {{ forms.autosuggestField({
     label: "Subfolder"|t('azure-blob'),
-    instructions: "If you want to use a container’s subfolder as a Volume, specify the path to use here."|t('azure-blob'),
+    instructions: "If you want to use a container’s subfolder as a volume, specify the path to use here."|t('azure-blob'),
     id: 'subfolder',
     class: 'ltr',
     name: 'subfolder',
