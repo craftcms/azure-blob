@@ -34,7 +34,7 @@ $(document).ready(function() {
 
                     refreshingAzureContainers = true;
 
-					$containerSelect.prop('readonly', false).empty();
+                    $containerSelect.prop('readonly', false).empty();
 
                     for (var i = 0; i < response.length; i++) {
                         if (response[i].container == currentContainer) {
@@ -51,14 +51,14 @@ $(document).ready(function() {
                     refreshingAzureContainers = false;
 
                     if (!currentContainerStillExists) {
-						$containerSelect.trigger('change');
+                        $containerSelect.trigger('change');
                     }
                 }
             }
         });
     });
 
-	$containerSelect.change(function() {
+    $containerSelect.change(function() {
         if (refreshingAzureContainers) {
             return;
         }
@@ -83,12 +83,12 @@ $(document).ready(function() {
 
 
     var maybeUpdateUrl = function() {
-    	const str = $connectionString.val();
-    	const accountName = str.match(/AccountName=(.*?)(;|$)/)[1];
-    	const suffix = str.match(/EndpointSuffix=(.*?)(;|$)/)[1];
-    	const protocol = str.match(/DefaultEndpointsProtocol=(.*?)(;|$)/)[1];
+        const str = $connectionString.val();
+        const accountName = str.match(/AccountName=(.*?)(;|$)/)[1];
+        const suffix = str.match(/EndpointSuffix=(.*?)(;|$)/)[1];
+        const protocol = str.match(/DefaultEndpointsProtocol=(.*?)(;|$)/)[1];
 
-		if ($hasUrls.val() && $manualContainer.val().length) {
+        if ($hasUrls.val() && $manualContainer.val().length) {
             $volumeUrl.val(protocol + '://' + accountName + '.' + suffix + '/' + $manualContainer.val() + '/');
         }
     };

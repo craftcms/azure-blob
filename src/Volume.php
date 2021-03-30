@@ -14,7 +14,6 @@ use craft\helpers\ArrayHelper;
 use craft\helpers\Assets;
 use craft\helpers\DateTimeHelper;
 use DateTime;
-use League\Flysystem\AdapterInterface;
 use League\Flysystem\AzureBlobStorage\AzureBlobStorageAdapter;
 use MicrosoftAzure\Storage\Blob\BlobRestProxy;
 
@@ -81,6 +80,7 @@ class Volume extends FlysystemVolume
 
         parent::__construct($config);
     }
+
     /**
      * @inheritdoc
      */

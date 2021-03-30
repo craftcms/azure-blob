@@ -74,9 +74,10 @@
     placeholder: "path/to/subfolder"|t('azure-blob')
 }) }}
 
-<hr />
+<hr>
+
 {% set cacheInput %}
-    {% set expires = (volume.expires|length > 0 ? volume.expires|split(' ') : ['', ''])%}
+    {% set expires = (volume.expires|length > 0 ? volume.expires|split(' ') : ['', '']) %}
 
     <div class="flex">
         <div>
