@@ -157,7 +157,7 @@ class Volume extends FlysystemVolume
      */
     protected function createAdapter(): AzureBlobStorageAdapter
     {
-        $client = static::client($this->connectionString);
+        $client = static::client(Craft::parseEnv($this->connectionString));
 
         return new AzureBlobStorageAdapter($client, Craft::parseEnv($this->container), $this->_subfolder());
     }
