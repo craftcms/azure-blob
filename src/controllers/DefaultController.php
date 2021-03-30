@@ -11,7 +11,7 @@ use yii\web\Response;
  * This controller provides functionality to load data from Azure Cloud.
  *
  * @author Pixel & Tonic, Inc. <support@pixelandtonic.com>
- * @since 1.0
+ * @since 1.0.0
  */
 class DefaultController extends BaseController
 {

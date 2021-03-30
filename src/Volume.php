@@ -23,7 +23,7 @@ use MicrosoftAzure\Storage\Blob\BlobRestProxy;
  * @property mixed $settingsHtml
  * @property string $rootUrl
  * @author Pixel & Tonic, Inc. <support@pixelandtonic.com>
- * @since 1.0
+ * @since 1.0.0
  */
 class Volume extends FlysystemVolume
 {

@@ -11,7 +11,7 @@ use yii\base\Event;
  * Plugin represents the Azure Blob Storage plugin.
  *
  * @author Pixel & Tonic, Inc. <support@pixelandtonic.com>
- * @since 1.0
+ * @since 1.0.0
  */
 class Plugin extends BasePlugin
 {
