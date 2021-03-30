@@ -70,7 +70,7 @@ class Volume extends FlysystemVolume
      */
     public function __construct(array $config = [])
     {
-        if (isset($config['manualContainer'])) {
+        if (array_key_exists('manualContainer', $config)) {
             if (isset($config['containerSelectionMode']) && $config['containerSelectionMode'] === 'manual') {
                 $config['container'] = ArrayHelper::remove($config, 'manualContainer');
             } else {
