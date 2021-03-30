@@ -21,8 +21,8 @@
     "email": "support@craftcms.com",
     "issues": "https://github.com/craftcms/azure-blob/issues?state=open",
     "source": "https://github.com/craftcms/azure-blob",
-    "docs": "https://github.com/craftcms/azure-blob/blob/master/README.md",
-    "rss": "https://github.com/craftcms/azure-blob/commits/master.atom"
+    "docs": "https://github.com/craftcms/azure-blob/blob/main/README.md",
+    "rss": "https://github.com/craftcms/azure-blob/commits/main.atom"
   },
   "require": {
     "craftcms/cms": "^3.6.0",
@@ -36,6 +36,6 @@
   "extra": {
     "name": "Azure Blob Storage",
     "handle": "azure-blob",
-    "documentationUrl": "https://github.com/craftcms/azure-blob/blob/master/README.md"
+    "documentationUrl": "https://github.com/craftcms/azure-blob/blob/main/README.md"
   }
 }
