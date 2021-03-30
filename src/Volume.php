@@ -114,7 +114,7 @@ class Volume extends FlysystemVolume
      */
     public function getSettingsHtml(): ?string
     {
-        return Craft::$app->getView()->renderTemplate('azure-blob/volumeSettings', [
+        return Craft::$app->getView()->renderTemplate('azure-blob/_volume-settings', [
             'volume' => $this,
             'periods' => array_merge(['' => ''], Assets::periodList()),
         ]);
