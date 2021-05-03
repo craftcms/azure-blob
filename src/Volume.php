@@ -38,32 +38,32 @@ class Volume extends FlysystemVolume
     /**
      * @var bool Whether this is a local source or not. Defaults to false.
      */
-    protected bool $isVolumeLocal = false;
+    protected $isVolumeLocal = false;
 
     /**
      * @var string Subfolder to use
      */
-    public string $subfolder = '';
+    public $subfolder = '';
 
     /**
      * @var string Azure connection string
      */
-    public string $connectionString = '';
+    public $connectionString = '';
 
     /**
      * @var string Bucket selection mode ('choose' or 'manual')
      */
-    public string $containerSelectionMode = 'choose';
+    public $containerSelectionMode = 'choose';
 
     /**
      * @var string Container to use
      */
-    public string $container = '';
+    public $container = '';
 
     /**
      * @var string Cache expiration period.
      */
-    public string $expires = '';
+    public $expires = '';
 
     /**
      * @inheritdoc
