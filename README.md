@@ -6,7 +6,7 @@ This plugin provides an [Azure Blob Storage](https://azure.microsoft.com/en-us/s
 
 ## Requirements
 
-This plugin requires Craft CMS 3.1.5 or later.
+This plugin requires Craft CMS 3.6.0 or later.
 
 ## Installation
 
