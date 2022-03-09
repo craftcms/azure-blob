@@ -24,9 +24,14 @@
     "docs": "https://github.com/craftcms/azure-blob/blob/main/README.md",
     "rss": "https://github.com/craftcms/azure-blob/commits/main.atom"
   },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "require": {
     "craftcms/cms": "^3.6.0",
     "league/flysystem-azure-blob-storage": "^1.0.0"
+  },
+  "require-dev": {
+    "craftcms/ecs": "dev-main"
   },
   "autoload": {
     "psr-4": {
@@ -37,5 +42,15 @@
     "name": "Azure Blob Storage",
     "handle": "azure-blob",
     "documentationUrl": "https://github.com/craftcms/azure-blob/blob/main/README.md"
+  },
+  "scripts": {
+    "check-cs": "ecs check --ansi",
+    "fix-cs": "ecs check --ansi --fix"
+  },
+  "config": {
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true,
+      "craftcms/plugin-installer": true
+    }
   }
 }
