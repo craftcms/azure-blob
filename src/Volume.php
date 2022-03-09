@@ -192,7 +192,7 @@ class Volume extends FlysystemVolume
     /**
      * Returns the parsed subfolder path
      *
-     * @return string|null
+     * @return string
      */
     private function _subfolder(): string
     {

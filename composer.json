@@ -31,7 +31,8 @@
     "league/flysystem-azure-blob-storage": "^1.0.0"
   },
   "require-dev": {
-    "craftcms/ecs": "dev-main"
+    "craftcms/ecs": "dev-main",
+    "craftcms/phpstan": "dev-main"
   },
   "autoload": {
     "psr-4": {
