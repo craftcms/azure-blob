@@ -4,7 +4,7 @@ namespace craft\azureblob;
 
 use craft\base\Plugin as BasePlugin;
 use craft\events\RegisterComponentTypesEvent;
-use craft\services\Volumes;
+use craft\services\Fs;
 use yii\base\Event;
 
 /**
@@ -18,7 +18,7 @@ class Plugin extends BasePlugin
     /**
      * @inheritdoc
      */
-    public $schemaVersion = '1.0';
+    public string $schemaVersion = '2.0';
 
     /**
      * @inheritdoc
@@ -27,8 +27,8 @@ class Plugin extends BasePlugin
     {
         parent::init();
 
-        Event::on(Volumes::class, Volumes::EVENT_REGISTER_VOLUME_TYPES, function(RegisterComponentTypesEvent $event) {
-            $event->types[] = Volume::class;
+        Event::on(Fs::class, Fs::EVENT_REGISTER_FILESYSTEM_TYPES, function(RegisterComponentTypesEvent $event) {
+            $event->types[] = Fs::class;
         });
     }
 }

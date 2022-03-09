@@ -8,8 +8,9 @@
 namespace craft\azureblob;
 
 use Craft;
-use craft\base\FlysystemVolume;
 use craft\behaviors\EnvAttributeParserBehavior;
+use craft\flysystem\base\FlysystemFs;
+use craft\helpers\App;
 use craft\helpers\ArrayHelper;
 use craft\helpers\Assets;
 use craft\helpers\DateTimeHelper;
@@ -25,7 +26,7 @@ use MicrosoftAzure\Storage\Blob\BlobRestProxy;
  * @author Pixel & Tonic, Inc. <support@pixelandtonic.com>
  * @since 1.0.0
  */
-class Volume extends FlysystemVolume
+class Fs extends FlysystemFs
 {
     /**
      * @inheritdoc
@@ -157,9 +158,9 @@ class Volume extends FlysystemVolume
      */
     protected function createAdapter(): AzureBlobStorageAdapter
     {
-        $client = static::client(Craft::parseEnv($this->connectionString));
+        $client = static::client(App::parseEnv($this->connectionString));
 
-        return new AzureBlobStorageAdapter($client, Craft::parseEnv($this->container), $this->_subfolder());
+        return new AzureBlobStorageAdapter($client, App::parseEnv($this->container), $this->_subfolder());
     }
 
     /**
@@ -196,7 +197,7 @@ class Volume extends FlysystemVolume
      */
     private function _subfolder(): string
     {
-        if ($this->subfolder && ($subfolder = rtrim(Craft::parseEnv($this->subfolder), '/')) !== '') {
+        if ($this->subfolder && ($subfolder = rtrim(App::parseEnv($this->subfolder), '/')) !== '') {
             return $subfolder . '/';
         }
 
