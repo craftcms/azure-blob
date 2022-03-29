@@ -1,7 +1,6 @@
 {
   "name": "craftcms/azure-blob",
   "description": "Azure Blob Storage integration for Craft CMS",
-  "version": "1.0.1",
   "type": "craft-plugin",
   "keywords": [
     "azure",
