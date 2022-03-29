@@ -147,7 +147,7 @@ class Fs extends FlysystemFs
     /**
      * @inheritdoc
      */
-    public function getRootUrl()
+    public function getRootUrl(): ?string
     {
         return parent::getRootUrl() . $this->_subfolder();
     }
@@ -202,5 +202,13 @@ class Fs extends FlysystemFs
         }
 
         return '';
+    }
+
+    /**
+     * @inheritdoc
+     */
+    protected function invalidateCdnPath(string $path): bool
+    {
+        return true;
     }
 }
