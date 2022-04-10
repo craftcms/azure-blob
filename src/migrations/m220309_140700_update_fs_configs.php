@@ -3,8 +3,8 @@
 namespace craft\azureblob\migrations;
 
 use Craft;
-use craft\db\Migration;
 use craft\azureblob\Fs;
+use craft\db\Migration;
 use craft\services\ProjectConfig;
 
 /**
