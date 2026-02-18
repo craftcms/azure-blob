@@ -1,5 +1,9 @@
 # Release Notes for Azure Blog Storagefor Craft CMS
 
+## Unreleased
+
+- Fixed a [critical-severity](https://github.com/craftcms/cms/security/policy#severity--remediation) information disclosure vulnerability. (GHSA-q6fm-p73f-x862)
+
 ## 2.1.0 - 2024-03-19
 
 - Added Craft 5 compatibility.

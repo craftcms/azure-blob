@@ -24,6 +24,7 @@ class DefaultController extends BaseController
      */
     public function actionLoadContainerData(): Response
     {
+        $this->requireAdmin();
         $this->requirePostRequest();
         $this->requireAcceptsJson();
 
