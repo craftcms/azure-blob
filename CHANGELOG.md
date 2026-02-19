@@ -1,5 +1,9 @@
 # Release Notes for Azure Blog Storagefor Craft CMS
 
+## Unreleased
+
+- Fixed a PHP error that could occur if a Subfolder path was set to a nonexistent environment variable. ([craftcms/aws-s3#189](https://github.com/craftcms/aws-s3/issues/189))
+
 ## 2.1.1 - 2026-02-17 [CRITICAL]
 
 - Fixed a [critical-severity](https://github.com/craftcms/cms/security/policy#severity--remediation) information disclosure vulnerability. (GHSA-q6fm-p73f-x862)

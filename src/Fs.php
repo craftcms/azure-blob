@@ -197,7 +197,7 @@ class Fs extends FlysystemFs
      */
     private function _subfolder(): string
     {
-        if ($this->subfolder && ($subfolder = rtrim(App::parseEnv($this->subfolder), '/')) !== '') {
+        if ($this->subfolder && ($subfolder = rtrim((string)App::parseEnv($this->subfolder), '/')) !== '') {
             return $subfolder . '/';
         }
 
