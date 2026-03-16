@@ -6,7 +6,7 @@
 
 ## 2.1.1 - 2026-02-17 [CRITICAL]
 
-- Fixed a [critical-severity](https://github.com/craftcms/cms/security/policy#severity--remediation) information disclosure vulnerability. (GHSA-q6fm-p73f-x862)
+- Fixed a [critical-severity](https://github.com/craftcms/cms/security/policy#severity--remediation) information disclosure vulnerability. ([GHSA-q6fm-p73f-x862](https://github.com/craftcms/azure-blob/security/advisories/GHSA-q6fm-p73f-x862))
 
 ## 2.1.0 - 2024-03-19
 
