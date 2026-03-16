@@ -1,4 +1,4 @@
-# Release Notes for Azure Blog Storagefor Craft CMS
+# Release Notes for Azure Blog Storage for Craft CMS
 
 ## 2.1.2 - 2026-02-19
 
